@@ -1,0 +1,37 @@
+<div style="margin-top:30%" id="question">
+    <h3>{{ formModel.count }}/10</h3>
+    <h1>
+        <a [routerLink]="['/home/intro/stepper2', {formModel:formModel | json}]" style="color:black; position: absolute; margin-left: -2em; margin-top: 0.07em; color: #444;">
+            <fa-icon [icon]="faArrowCircleLeft"></fa-icon>
+        </a>
+        
+        Qual o seu nível de formação?
+    </h1>
+    <h4 class="my-3">Coletamos essa informação apenas para entendermos melhor o perfil médio do empreendedor brasileiro.</h4>
+    <form class="mt-4 mb-3">
+      <li>
+        <input type="radio" id ='fundamental' name="escolaridade" [(ngModel)]="formModel.escolaridade" [value]="'fundamental'">
+        <label for="fundamental">Ensino Fundamental</label>
+        <div class="check"></div>
+      </li>
+      <li>
+        <input type="radio" id ='medio' name="escolaridade" [(ngModel)]="formModel.escolaridade" [value]="'medio'" >
+        <label for="medio">Ensino Médio</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" id ='tecnico' name="escolaridade" [(ngModel)]="formModel.escolaridade" [value]="'tecnico'">
+        <label for="tecnico">Curso Técnico</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+      <li>
+        <input type="radio" id ='superior' name="escolaridade" [(ngModel)]="formModel.escolaridade" [value]="'superior'" >
+        <label for="superior">Ensino Superior</label>
+        <div class="check"><div class="inside"></div></div>
+      </li>
+    </form>
+    <div class="d-relative">
+        <button class="btn btn-primary mt-4" [routerLink]="['/home/intro/stepper4', {formModel:formModel | json}]">Próxima</button>
+        <span class="pt-4 align-middle"> pressione Enter <fa-icon [icon]="faExternalLinkAlt"></fa-icon></span>
+    </div>
+</div>
